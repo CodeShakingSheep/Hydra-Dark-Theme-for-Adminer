@@ -66,9 +66,6 @@ body {
 	background: transparent;
 	padding: 4px 0
 }
-#menu select {
-	width: 86%
-}
 #menu #logins {
 	padding: 10px 14px 0;
 	height: 100%
@@ -377,7 +374,7 @@ input[type=number] {
 	color: #fff;
 	background: #7962f2
 }
-table {
+table:not(#dbs){
 	margin-top: 20px;
 	min-width: 800px;
 	border-collapse: collapse;
@@ -428,7 +425,7 @@ th {
 	font-weight: normal;
 	font-size: 14px
 }
-td {
+table:not(#dbs) td {
 	box-sizing: border-box;
 	padding: 2px 10px 0;
 	height: 45px;
@@ -515,7 +512,7 @@ sup {
 }
 #content .links:nth-of-type(2) {
 	margin-top: 30px;
-	order: 0
+	order: 0;
 }
 #content .links a {
 	display: inline-block;
@@ -531,17 +528,17 @@ sup {
 	font-weight: bold;
 	font-size: 13px;
 	line-height: 24px;
-	transition: all .2s
+	transition: all .2s;
 }
 #content .links a:hover {
 	background: #7962f2;
 	color: #fff;
-	text-decoration: none
+	text-decoration: none;
 }
 #content .links .active {
 	background: #7962f2;
 	color: #fff;
-	cursor: default
+	cursor: default;
 }
 #content form>fieldset:first-child {
 	background-color: transparent;
@@ -551,7 +548,8 @@ sup {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 4px;
-	margin-top: -40px
+	margin-top: -40px;
+	height: 100px;
 }
 #content form>fieldset:first-child legend {
 	/* display: none */
@@ -649,7 +647,7 @@ sup {
 #logout:hover {
     background: #7962f2;
 }
-td {
+table:not(#dbs) td {
 	background: #2f2b3f;
 	border: 1px solid rgba(0,0,0,0.1);
 }
@@ -714,14 +712,15 @@ thead td::before, thead th::before {
 	padding: 4px 14px;
 	font-weight: 500;
 	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	width: 89%;
 }
 #menu form {
 	/*background: #7962f2;*/
+	overflow: auto;
 }
 #menu .links {
 	/*background-color: #7962f2;
 	background-image: url('side-menu-bg.png');*/
-	padding-bottom: 158px;
 	background-size: 100%;
 	background-position: bottom;
     border: none;
@@ -729,11 +728,26 @@ thead td::before, thead th::before {
 #menu .links a {
 	background: rgba(255,255,255,0.2);
 	color: #fff;
+	width: 95%;
+}
+#menu .links span.separator {
+	display: none;
+}
+#menu form p:first-of-type {
+	padding-bottom: 0;
+}
+#menu form p:last-of-type {
+	padding-top: 0;
 }
 #tables a {
 	background: transparent;
 	color: #fff;
 	font-weight: 500;
+}
+#tables li a.select {
+	font-size: 13px;
+	padding: 5px;
+	background-image: none;
 }
 #tables a.select {
 	background: rgba(255,255,255,0.2);
@@ -757,14 +771,22 @@ thead td::before, thead th::before {
 	text-transform: uppercase;
 	font-weight: 700;
 	color: rgba(0,0,0,0.6);
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+	width: 100%;
+	position: relative;
+	top: -1px;
 }
-#dbs{
+#dbs {
 	color: transparent;
 }
-#dbs span{
+#dbs td:first-child {
 	font-size: 0px;
 }
-#dbs span::before {
+
+#dbs label::before {
     font-size: 16px;
     position: relative;
 	top: 1px;
@@ -772,23 +794,15 @@ thead td::before, thead th::before {
 	content: "dns";
 	font-family: "Material Icons";
 }
-#menu select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-	width: 78%;
-	position: relative;
-	top: -1px;
-}
-#dbs::after{
+
+#dbs tr:first-child::after {
 	content: "arrow_forward_ios";
 	font-family: "Material Icons";
 	font-size: 15px;
 	color: #000;
 	position: relative;
 	display: inline;
-	top: 1px;
+	top: 2.5px;
 	left: 8px;
 	opacity: 0.6;
 }
@@ -832,7 +846,7 @@ a, a:link {
     color: #7962f2;
     transition: all .2s;
 }
-td{
+table:not(#dbs) td {
 	color: #ffffff;
 }
 #content fieldset:first-child #fieldset-import, #content fieldset:nth-of-type(1), #content fieldset:nth-of-type(2):not(.jsonly), #content fieldset:nth-of-type(3), #content fieldset:nth-of-type(4), #content fieldset:nth-of-type(5) {
