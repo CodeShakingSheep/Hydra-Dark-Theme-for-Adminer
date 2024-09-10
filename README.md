@@ -3,14 +3,14 @@ An AdminerEvo dark mode material design theme based on inspired by the Adminer m
 
 ## :zap: Usage
 * Get a copy of [AdminerEvo](https://adminerevo.org/)
-* Download the `adminer.css` from [here](https://raw.githubusercontent.com/CodeShakingSheep/Hydra-Dark-Theme-for-Adminer/master/adminer.css)
+* Download the `adminer.css` from [here](https://raw.githubusercontent.com/CodeShakingSheep/Hydra-Dark-Theme-for-AdminerEvo/master/adminer.css)
 * Put them both in the same web folder
 
 ## :mag: Preview
 ![Screenshot of Hydra theme applied on Adminer](screenshot.png)
 
 ## :page_with_curl: License
-Hydra Dark Theme for AdminerEvo is licensed under the [MIT License](https://github.com/CodeShakingSheep/Hydra-Dark-Theme-for-Adminer/blob/master/LICENSE).
+Hydra Dark Theme for AdminerEvo is licensed under the [MIT License](https://github.com/CodeShakingSheep/Hydra-Dark-Theme-for-AdminerEvo/blob/master/LICENSE).
 
 ## :sun_with_face: Thanks to
 * Hydra, Material Design Dark Theme for AdminerEvo is the successor of [Hydra for Adminer](https://github.com/Niyko/Hydra-Dark-Theme-for-Adminer) by Niyko
