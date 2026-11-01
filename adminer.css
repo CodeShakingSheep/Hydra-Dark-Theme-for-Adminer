@@ -2,9 +2,9 @@
 ╦ ╦╦ ╦╔╦╗╦═╗╔═╗
 ╠═╣╚╦╝ ║║╠╦╝╠═╣
 ╩ ╩ ╩ ═╩╝╩╚═╩ ╩
-Material Design Dark Theme for AdminerEvo
+Material Design Dark Theme for Adminer
 Made with ♥ from CodeShakingsSheep
-https://github.com/CodeShakingSheep/Hydra-Dark-Theme-for-AdminerEvo
+https://github.com/CodeShakingSheep/Hydra-Dark-Theme-for-Adminer
 Based on the Hydra for Adminer by Niyko
 https://github.com/Niyko/Hydra-Dark-Theme-for-Adminer
 */
@@ -482,13 +482,14 @@ sup {
 	width: 24px;
 	height: 24px;
 	border-radius: 2px;
-	background-color: transparent;
+	background: #000;
+	opacity: .8;
+	-webkit-filter: contrast(125%) invert(1);
+	filter: contrast(125%) invert(1);
 	transition: all .2s;
-	opacity: 0.8;
 }
 .icon:hover {
-	opacity: 0.5;
-	background-color: transparent;
+	background: #e1771a
 }
 .footer {
 	background: none;
@@ -664,11 +665,11 @@ input[type="checkbox"] {
 tbody tr:hover td, tbody tr:hover th {
     background: #2f2b3f;
 }
-th {
+th, td {
 	background: #2f2b3f;
 	border: 1px solid rgba(0,0,0,0.1);
 }
-thead td, thead th {
+thead th {
     background: #4c4665;
     color: #ffffff;
 	font-weight: 700;
@@ -680,6 +681,15 @@ thead td::after, thead th::after {
 }
 thead td::before, thead th::before {
     background: #221f2e;
+}
+thead td.hover, thead td.hover:hover, thead td.hover:has(~ th:hover) {
+	background-color: #4c4665;
+}
+tbody td.hover, tbody td.hover:hover, tbody td.hover:has(~ th:hover), tbody td.hover:has(~ td:hover), tbody td.hover.checked {
+	background-color: #2f2b3f;
+}
+td.hover {
+	width: 0;
 }
 #content table {
 	border-radius: 7px;
@@ -795,39 +805,27 @@ thead td::before, thead th::before {
 #dbs td:first-child {
 	font-size: 0px;
 }
-#dbs label{
-	width: 170px;
-	display: inline-block;
-	height: 28px;
+
+#dbs label {
+	color:#000;
 }
-#dbs::before {
-	font-size: 16px;
-	position: absolute;
-	top: 8px;
+
+#dbs label::before {
+    position: relative;
 	color: #000;
 	content: "dns";
 	font-family: "Material Icons";
 }
-#menu select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	text-indent: 1px;
-	text-overflow: '';
-	width: 182px;
-	position: absolute;
-	top: 7px;
-	text-align: center;
-	left: 31px;
-}
-#dbs::after{
+
+#dbs label::after {
 	content: "arrow_forward_ios";
 	font-family: "Material Icons";
 	font-size: 15px;
 	color: #000;
-	position: absolute;
+	position: relative;
 	display: inline;
-	top: 8px;
-	right: 12px;
+	top: 2.5px;
+	left: 8px;
 	opacity: 0.6;
 }
 #tables .structure{
@@ -882,7 +880,7 @@ div input[name="delete"], div input[name="drop"], div input[name="truncate"], in
 div input[name="delete"]:hover, div input[name="drop"]:hover, div input[name="truncate"]:hover, input[value="Kill"]:hover {
     background: repeating-linear-gradient(-55deg, #4a39a4, #4a39a4 5px, #7962f2 5px, #7962f2 10px);
 }
-.js .checkable .checked td, .js .checkable .checked th {
+.js .checkable .checked td, .js .checkable .checked th, .js .checkable .checked td.hover {
     background: #221f2e;
 }
 td a, td a:visited, th a, th a:visited {
@@ -969,6 +967,9 @@ code {
 }
 input[type="radio"] {
 	filter: invert();
+}
+.icon:hover {
+    background: #000;
 }
 select option {
     background: #221f2e;
@@ -1113,7 +1114,7 @@ a[href="#import"] {
 }
 .layout input[name='auth[server]'], .layout input[name='auth[username]'], .layout input[name='auth[password]'], .layout input[name='auth[db]'] {
 	width: 100%;
-	max-width: 298px;
+	max-width: 280px;
 }
 ul#tables{
 	padding: 9px 12px 20px 6px;
@@ -1121,32 +1122,4 @@ ul#tables{
 ::selection {
 	background: #7962f2;
 	color: #fff;
-}
-#logo{
-	display: none;
-}
-.footer{
-	box-shadow: none;
-}
-.odds tbody tr, .odds tbody tr:nth-child(2n){
-	background: transparent;
-}
-thead{
-  	z-index: 1;
-}
-input, textarea, .sqlarea{
-	outline: none !important;
-}
-.editor #menu{
-	padding-top: 82px;
-}
-.editor #tables{
-	background: rgb(34, 31, 46);
-}
-.editor #tables a.select{
-	float: initial;
-	width: 100%;
-}
-.editor #menu h1:first-of-type{
-  	margin-top: -27px;
 }
